@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-        <script>
-      google.script.run.doSomething();
-    </script>
     <base target="_top">
   </head>
   <body>
-  Hello<br><br>
+    Hello Karl,<br><br>
+    Here are your current Tasks for 
+    <?= getdate(); ?><br><br>
 
+    <? var tldata = Tasks.Tasklists.list(); ?>
+    <? for (var i = 0; i < tldata.items.length; i++) { ?>
+    <u><?= tldata.items[i].title ?></u><br><br>
+    <? var tdata = Tasks.Tasks.list(tldata.items[i].id) ?>
+    <?for (var j = 0; j < tdata.items.length; j++ ) { ?>
+    &ensp;&ensp;<?= tdata.items[j].title ?><br><br>
+    <? } ?>
+     <? } ?>
+
+    </table>
+    <br>
+    Enjoy the rest of your day<br>
   </body>
 </html>
