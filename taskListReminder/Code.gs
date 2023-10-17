@@ -1,5 +1,5 @@
 function sendMail(){
-  mailbody = doGet().getContent;
+  mailbody = doGet().getContent();
   MailApp.sendEmail("thecoolgoof@gmail.com", "Daily Task Reminder", "Please get html email",{
     htmlBody: mailbody
   })
