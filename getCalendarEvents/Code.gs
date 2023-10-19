@@ -1,10 +1,10 @@
-var calendar = CalendarApp.getDefaultCalendar();
-var TIMEZONE = calendar.getTimeZone();
+var calendar = CalendarApp.getDefaultCalendar()
+var TIMEZONE = calendar.getTimeZone()
 
-var email = Session.getActiveUser().getEmail(); 
+var email = Session.getActiveUser().getEmail() 
 
 function sendMail(){
-  mailbody = doGet().getContent();
+  mailbody = doGet().getContent()
   MailApp.sendEmail(email, "Daily Schedule", "Please get html email",{
     htmlBody: mailbody
   })
@@ -18,5 +18,5 @@ function getCalendarEntries() {
 function doGet() {
   return HtmlService
       .createTemplateFromFile('template')
-      .evaluate();
+      .evaluate()
 }

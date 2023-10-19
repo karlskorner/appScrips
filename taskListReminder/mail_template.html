@@ -6,17 +6,17 @@
   <body>
     Hello Mr Weinert<br>
     <b>Here are your current Tasks</b><br>
-    <? var tldata = listTaskLists(); ?>
+    <? var tldata = listTaskLists() ?>
     You have <? "i" ?> Tasks Due<br><br>
     
     <table>
-      <? for (var i = 0; i < tldata.length; i++) { ?>
+      <? for (var i = 0 i < tldata.length i++) { ?>
         <tr>
             <td><?= tldata.items[i] ?></td>
         </tr>
 
-        <? var tdata = listTasks(tldata.id[i] ); ?>
-        <? for (var j = 0; j < tdata.length; j++) {?>
+        <? var tdata = listTasks(tldata.id[i] ) ?>
+        <? for (var j = 0 j < tdata.length j++) {?>
 
         <tr>
         <td><?= tdata.items[j] ?></td>
