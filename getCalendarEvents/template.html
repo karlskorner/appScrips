@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+    Hello Mr Weinert<br>
+    <b>Here are your current Tasks</b><br>
+    <? function DoGet() { ?>
+    <? var today + new Date() ?>
+    <table>
+    <? var events = CalendarApp.getDefaultCalendar().getEventsForDay(today) ?>
+    <? if (events.length){ ?>
+       <? for (var i = 0; i < events.length; i++){ ?>
+          <? var title = events[i].getTitle() ?>
+          <tr>
+          <td>         
+          The Title is <?= "title" ?>
+          </td>
+          </tr>
+          <? var startTime = Utilities.formatDate(events[i].getStartTime(), TIMEZONE, "EEE, h:mm a") ?>
+          <tr>
+            <td>           
+          The Start time is <?= startTime ?>
+
+
+        </td>
+    </tr>
+        
+       <? } ?>
+
+    <? } ?>
+
+
+<? } ?>
+    
+
+    </table>
+  </body>
+</html>
