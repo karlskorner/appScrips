@@ -1,14 +1,22 @@
-//found on stackOverflow
-//https://stackoverflow.com/questions/65805730/apps-script-function-native-code
+var calendar = CalendarApp.getDefaultCalendar();
+var TIMEZONE = calendar.getTimeZone();
 
-function myFunction() {
-  var today = new Date();
-  var events = CalendarApp.getDefaultCalendar().getEventsForDay(today);
-  var event1 = events[0];
-  var startTime = event1.getStartTime(); //modified ()
-  Logger.log(startTime);
-  var id = event1.getId(); //modified ()
-  Logger.log(id);
-  var title = event1.getTitle(); //modified ()
-  Logger.log(title);
+var email = Session.getActiveUser().getEmail(); 
+
+function sendMail(){
+  mailbody = doGet().getContent();
+  MailApp.sendEmail(email, "Daily Schedule", "Please get html email",{
+    htmlBody: mailbody
+  })
+}
+
+function getCalendarEntries() {
+  var today = new Date()
+}
+
+
+function doGet() {
+  return HtmlService
+      .createTemplateFromFile('template')
+      .evaluate();
 }
