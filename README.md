@@ -1,1 +1,1 @@
-# My GWS App Scripts
+# GWS App Scripts
